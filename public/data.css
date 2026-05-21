@@ -1,0 +1,116 @@
+.data-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.data-table-wrapper {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th {
+    padding: 15px;
+    border-bottom: 2px solid var(--primary-light);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    color: #444;
+    font-size: 0.9rem;
+}
+
+tr:hover {
+    background: rgba(var(--primary-rgb), 0.05);
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.status-pill {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    background: #e1f5fe;
+    color: #0288d1;
+}
+
+.search-container {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 16px 24px;
+    padding-left: 55px; /* Space for an icon */
+    border-radius: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.95);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.search-input:focus {
+    border-color: #4f46e5;
+    border-color: var(--primary);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    background: #fff;
+    transform: translateY(-1px);
+}
+
+.search-icon {
+    position: absolute;
+    left: 20px;
+    font-size: 1.2rem;
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+.btn-secondary {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid #4f46e5; /* Fallback to indigo if --primary is missing */
+    border: 1px solid var(--primary);
+    background: rgba(255, 255, 255, 0.1);
+    color: #4f46e5;
+    color: var(--primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Outfit', sans-serif;
+}
+
+.btn-secondary:hover {
+    background: #4f46e5;
+    background: var(--primary);
+    color: #fff;
+}

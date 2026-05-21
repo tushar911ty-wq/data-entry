@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Student Records</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="login-card">
+        <h1>Admin Access</h1>
+        <p>Please enter your password to view records.</p>
+        
+        <div class="form-group">
+            <label for="password">Password</label>
+            <div class="password-wrapper" style="position: relative;">
+                <input type="password" id="password" placeholder="••••••••" required style="padding-right: 45px;">
+                <span id="togglePassword" class="eye-icon" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #94a3b8; font-size: 1.2rem;">👁️</span>
+            </div>
+            <div id="errorMsg" class="error-message">Incorrect password. Please try again.</div>
+        </div>
+        
+        <button id="loginBtn">Unlock Records</button>
+        
+        <a href="index.html" class="back-link">← Back to Registration</a>
+    </div>
+
+    <script src="login-script.js"></script>
+</body>
+</html>

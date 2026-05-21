@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Records | View Data</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="data.css">
+    <script>
+        if (!sessionStorage.getItem('adminPassword')) {
+            window.location.href = 'login.html';
+        }
+    </script>
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="data-container">
+        <a href="index.html" class="back-link">← Back to Registration</a>
+        <div class="header"
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+            <div>
+                <h1>Registered Students</h1>
+                <p>Complete list of all student data entries.</p>
+            </div>
+            <button id="generateDemoBtn" class="btn-secondary">Generate Demo Data</button>
+        </div>
+
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search by name, roll no, city, date, course, year...">
+        </div>
+
+        <div class="data-table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Student ID</th>
+                        <th>Course</th>
+                        <th>Year</th>
+                        <th>City</th>
+                        <th>Country</th>
+                        <th>Created At</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody">
+                    <tr>
+                        <td colspan="7" style="text-align: center; padding: 40px;">Loading data...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="data-script.js"></script>
+</body>
+
+</html>

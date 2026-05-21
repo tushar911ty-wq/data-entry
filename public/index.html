@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data Portal | Secure Entry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <div class="form-card">
+            <div class="header">
+                <h1>Student Portal</h1>
+                <p>Please provide your information accurately.</p>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+                <div class="step-indicators">
+                    <div class="step active" data-step="1">1</div>
+                    <div class="step" data-step="2">2</div>
+                    <div class="step" data-step="3">3</div>
+                </div>
+            </div>
+
+            <form id="studentForm">
+                <!-- Step 1: Personal Info -->
+                <div class="tab" id="step-1">
+                    <h2 class="step-title">Personal Details</h2>
+                    <div class="input-group">
+                        <div class="field">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="John" list="demoNames" required>
+                            <datalist id="demoNames">
+                                <option value="Rahul">
+                                <option value="Pooja">
+                                <option value="Amit">
+                                <option value="Priya">
+                                <option value="Sneha">
+                            </datalist>
+                        </div>
+                        <div class="field">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="studentId">Student ID / Roll No</label>
+                        <input type="text" id="studentId" name="studentId" placeholder="COL-2024-001" required>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
+                    </div>
+                    <div class="input-group">
+                        <div class="field">
+                            <label for="country">Country</label>
+                            <select id="country" name="country" required>
+                                <option value="" disabled selected>Select Country</option>
+                                <option value="India" data-code="+91">India (+91)</option>
+                                <option value="USA" data-code="+1">USA (+1)</option>
+                                <option value="UK" data-code="+44">UK (+44)</option>
+                                <option value="Canada" data-code="+1">Canada (+1)</option>
+                                <option value="Australia" data-code="+61">Australia (+61)</option>
+                                <option value="Germany" data-code="+49">Germany (+49)</option>
+                                <option value="UAE" data-code="+971">UAE (+971)</option>
+                                <option value="France" data-code="+33">France (+33)</option>
+                                <option value="Japan" data-code="+81">Japan (+81)</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="phone">Phone Number</label>
+                            <div class="phone-input-wrapper">
+                                <span class="phone-prefix" id="phonePrefix">+1</span>
+                                <input type="tel" id="phone" name="phone" placeholder="000-000-0000" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Academic Info -->
+                <div class="tab" id="step-2" style="display: none;">
+                    <h2 class="step-title">Academic Record</h2>
+
+                    <div class="field">
+                        <label for="collegeName">College Name</label>
+                        <input type="text" id="collegeName" name="collegeName" placeholder="University of Excellence" required>
+                    </div>
+                    <div class="input-group">
+                        <div class="field">
+                            <label for="course">Course / Major</label>
+                            <input type="text" id="course" name="course" placeholder="Computer Science" required>
+                        </div>
+                        <div class="field">
+                            <label for="year">Academic Year</label>
+                            <select id="year" name="year" required>
+                                <option value="" disabled selected>Select Year</option>
+                                <option value="1st Year">1st Year</option>
+                                <option value="2nd Year">2nd Year</option>
+                                <option value="3rd Year">3rd Year</option>
+                                <option value="4th Year">4th Year</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Address Info -->
+                <div class="tab" id="step-3" style="display: none;">
+                    <h2 class="step-title">Location Information</h2>
+                    <div class="field">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" placeholder="New York" required>
+                    </div>
+                    <div class="input-group">
+                        <div class="field">
+                            <label for="state">State / Province</label>
+                            <input type="text" id="state" name="state" placeholder="NY" required>
+                        </div>
+                        <div class="field">
+                            <label for="zipCode">Zip Code</label>
+                            <input type="text" id="zipCode" name="zipCode" placeholder="10001" required>
+                        </div>
+                    </div>
+                    
+                    <div class="confirmation">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I confirm that the data entered is correct.</label>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" id="prevBtn" class="btn btn-secondary" style="display: none;">Previous</button>
+                    <button type="button" id="nextBtn" class="btn btn-primary">Next</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h2>Submission Successful!</h2>
+            <p>Your student profile has been securely stored in our database.</p>
+            <button onclick="location.reload()" class="btn btn-primary">New Entry</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
